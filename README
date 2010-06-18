@@ -1,0 +1,5 @@
+@author Josh Adell <josh.adell@gmail.com>
+
+A port of the box2djs library into a node module.
+
+I am not the original author of box2djs.  box2djs is available from http://box2d-js.sourceforge.net under the zlib/libpng License
