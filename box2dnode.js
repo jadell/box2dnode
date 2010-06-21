@@ -6662,7 +6662,7 @@ b2ContactSolver.prototype.SolvePositionConstraints = function (baumgarte) {
 		
 		return minSeparation >= -1.5 * b2Settings.b2_linearSlop;
 	}
-
+exports.b2ContactSolver = b2ContactSolver;
 
 
 var b2ContactConstraintPoint = function() {
@@ -6688,8 +6688,7 @@ b2ContactConstraintPoint.prototype.tangentMass =  null;
 b2ContactConstraintPoint.prototype.equalizedMass =  null;
 b2ContactConstraintPoint.prototype.separation =  null;
 b2ContactConstraintPoint.prototype.velocityBias =  null;
-
-
+exports.b2ContactConstraintPoint = b2ContactConstraintPoint;
 
 
 var b2ContactRegister = function() {
@@ -6702,11 +6701,7 @@ b2ContactRegister.prototype.__varz = function(){
 b2ContactRegister.prototype.createFcn =  null;
 b2ContactRegister.prototype.destroyFcn =  null;
 b2ContactRegister.prototype.primary =  null;
-
-
-
-
-
+exports.b2ContactRegister = b2ContactRegister;
 
 
 var b2ContactConstraint = function() {
@@ -6732,15 +6727,7 @@ b2ContactConstraint.prototype.body2 =  null;
 b2ContactConstraint.prototype.friction =  null;
 b2ContactConstraint.prototype.restitution =  null;
 b2ContactConstraint.prototype.pointCount =  0;
-
-
-
-
-
-
-
-
-
+exports.b2ContactConstraint = b2ContactConstraint;
 
 
 var b2PolygonContact = function() {
@@ -6894,8 +6881,7 @@ b2PolygonContact.prototype.Evaluate = function (listener) {
 b2PolygonContact.prototype.GetManifolds = function () {
 		return this.m_manifolds;
 	}
-	
-	
+exports.b2PolygonContact = b2PolygonContact;
 	
 	
 var b2CircleContact = function() {
@@ -7012,14 +6998,7 @@ b2CircleContact.prototype.Evaluate = function (listener) {
 b2CircleContact.prototype.GetManifolds = function () {
 		return this.m_manifolds;
 	}
-	
-	
-	
-	
-	
-
-
-
+exports.b2CircleContact = b2CircleContact;
 
 	
 var b2PolyAndCircleContact = function() {
@@ -7173,9 +7152,7 @@ b2PolyAndCircleContact.prototype.Evaluate = function (listener) {
 b2PolyAndCircleContact.prototype.GetManifolds = function () {
 		return this.m_manifolds;
 	}
-	
-	
-	
+exports.b2PolyAndCircleContact = b2PolyAndCircleContact;
 	
 	
 var b2JointEdge = function() {
@@ -7189,9 +7166,7 @@ b2JointEdge.prototype.other =  null;
 b2JointEdge.prototype.joint =  null;
 b2JointEdge.prototype.prev =  null;
 b2JointEdge.prototype.next =  null;
-// methods	
-
-
+exports.b2JointEdge = b2JointEdge;
 
 
 var b2JointDef = function() {
@@ -7212,7 +7187,7 @@ b2JointDef.prototype.userData =  null;
 b2JointDef.prototype.body1 =  null;
 b2JointDef.prototype.body2 =  null;
 b2JointDef.prototype.collideConnected =  null;
-
+exports.b2JointDef = b2JointDef;
 
 
 var b2MouseJointDef = function() {
@@ -7237,8 +7212,7 @@ b2MouseJointDef.prototype.maxForce =  null;
 b2MouseJointDef.prototype.frequencyHz =  null;
 b2MouseJointDef.prototype.dampingRatio =  null;
 b2MouseJointDef.prototype.timeStep =  null;
-
-
+exports.b2MouseJointDef = b2MouseJointDef;
 
 
 var b2PulleyJointDef = function() {
@@ -7304,8 +7278,7 @@ b2PulleyJointDef.prototype.Initialize = function (b1, b2,
 		this.maxLength1 = C - this.ratio * b2PulleyJoint.b2_minPulleyLength;
 		this.maxLength2 = (C - b2PulleyJoint.b2_minPulleyLength) / this.ratio;
 	}
-	
-	
+exports.b2PulleyJointDef = b2PulleyJointDef;
 	
 	
 var b2Jacobian = function() {
@@ -7334,8 +7307,7 @@ b2Jacobian.prototype.Compute = function (x1, a1, x2, a2) {
 		
 		return (this.linear1.x*x1.x + this.linear1.y*x1.y) + this.angular1 * a1 + (this.linear2.x*x2.x + this.linear2.y*x2.y) + this.angular2 * a2;
 	}
-	
-	
+exports.b2Jacobian = b2Jacobian;
 	
 	
 var b2DistanceJointDef = function() {
@@ -7374,7 +7346,7 @@ b2DistanceJointDef.prototype.Initialize = function (b1, b2,
 		this.frequencyHz = 0.0;
 		this.dampingRatio = 0.0;
 	}
-	
+exports.b2DistanceJointDef = b2DistanceJointDef;
 	
 	
 var b2PrismaticJointDef = function() {
@@ -7420,9 +7392,7 @@ b2PrismaticJointDef.prototype.Initialize = function (b1, b2, anchor, axis) {
 		this.localAxis1 = this.body1.GetLocalVector(axis);
 		this.referenceAngle = this.body2.GetAngle() - this.body1.GetAngle();
 	}
-	
-	
-	
+exports.b2PrismaticJointDef = b2PrismaticJointDef;
 	
 	
 var b2RevoluteJointDef = function() {
@@ -7464,8 +7434,7 @@ b2RevoluteJointDef.prototype.Initialize = function (b1, b2, anchor) {
 		this.localAnchor2 = this.body2.GetLocalPoint(anchor);
 		this.referenceAngle = this.body2.GetAngle() - this.body1.GetAngle();
 	}
-	
-	
+exports.b2RevoluteJointDef = b2RevoluteJointDef;
 	
 	
 var b2Joint = function() {
@@ -7591,8 +7560,7 @@ b2Joint.prototype.InitVelocityConstraints = function (step) {}
 b2Joint.prototype.SolveVelocityConstraints = function (step) {}
 b2Joint.prototype.InitPositionConstraints = function () {}
 b2Joint.prototype.SolvePositionConstraints = function () {return false}
-
-
+exports.b2Joint = b2Joint;
 
 
 var b2GearJoint = function() {
@@ -7872,8 +7840,7 @@ b2GearJoint.prototype.SolvePositionConstraints = function () {
 		
 		return linearError < b2Settings.b2_linearSlop;
 	}
-	
-	
+exports.b2GearJoint = b2GearJoint;
 	
 	
 var b2GearJointDef = function() {
@@ -7894,8 +7861,7 @@ b2GearJointDef.prototype.__varz = function(){
 b2GearJointDef.prototype.joint1 =  null;
 b2GearJointDef.prototype.joint2 =  null;
 b2GearJointDef.prototype.ratio =  null;
-
-
+exports.b2GearJointDef = b2GearJointDef;
 
 
 var b2DistanceJoint = function() {
@@ -8162,7 +8128,7 @@ b2DistanceJoint.prototype.GetReactionTorque = function () {
 		
 		return 0.0;
 	}
-	
+exports.b2DistanceJoint = b2DistanceJoint;
 	
 	
 var b2MouseJoint = function() {
@@ -8349,9 +8315,7 @@ b2MouseJoint.prototype.SolveVelocityConstraints = function (step) {
 b2MouseJoint.prototype.SolvePositionConstraints = function () { 
 		return true; 
 	}
-	
-	
-
+exports.b2MouseJoint = b2MouseJoint;
 
 
 var b2PulleyJoint = function() {
@@ -8948,7 +8912,7 @@ b2PulleyJoint.prototype.SolvePositionConstraints = function () {
 		
 		return linearError < b2Settings.b2_linearSlop;
 	}
-
+exports.b2PulleyJoint = b2PulleyJoint;
 
 
 var b2RevoluteJoint = function() {
@@ -9412,7 +9376,7 @@ b2RevoluteJoint.prototype.SolvePositionConstraints = function () {
 		
 		return positionError <= b2Settings.b2_linearSlop && angularError <= b2Settings.b2_angularSlop;
 	}
-	
+exports.b2RevoluteJoint = b2RevoluteJoint;
 	
 	
 var b2PrismaticJoint = function() {
@@ -10036,3 +10000,4 @@ b2PrismaticJoint.prototype.SolvePositionConstraints = function () {
 		return positionError <= b2Settings.b2_linearSlop && angularError <= b2Settings.b2_angularSlop;
 		
 	}	
+exports.b2PrismaticJoint = b2PrismaticJoint;
