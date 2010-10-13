@@ -1,0 +1,13 @@
+{
+	"name" : "box2d",
+	"version" : "1.0.0",
+	"description" : "2D physics engine",
+	"homepage" : "http://github.com/jadell/box2dnode",
+	"author": {
+		"name" : "Josh Adell",
+		"email" : "josh.adell@gmail.com",
+		"url" : "http://everymansoftware.blogspot.com/"
+	},
+	"main" : "./box2dnode",
+	"engines" : ["node"]
+}
